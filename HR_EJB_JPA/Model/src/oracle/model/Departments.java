@@ -15,7 +15,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Departments.findAll", query = "select o from Departments o") })
+@NamedQueries({ @NamedQuery(name = "Departments.findAll", query = "select o from Departments o") ,
+                @NamedQuery(name = "Departments.findByEmployees", query = "select o from Departments where o.Employees like :p_Employees ") })
 public class Departments implements Serializable {
     private static final long serialVersionUID = 7884034687102735635L;
     @Id
